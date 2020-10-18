@@ -44,11 +44,10 @@ function decode(expr) {
     let newArr2 = newArr1.map((el) => el.replace(/^0+/, '')
         .replace(/10/gi, '.')
         .replace(/11/gi, '-')
-        .replace(/[**********]/gi, '')
     );
 
     return newArr2.map((el) => {
-        if (el === '')
+        if (el === '**********')
             return ' ';
 
         for (var prop in MORSE_TABLE) {
